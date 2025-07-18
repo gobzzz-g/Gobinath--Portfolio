@@ -95,12 +95,16 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 bg-background relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-10 left-10 w-24 h-24 bg-gradient-secondary rounded-full opacity-10"></div>
+      <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-primary rounded-full opacity-10"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-accent rounded-full opacity-15"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Featured Projects
+            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of my technical projects and creative solutions that demonstrate my skills in software development, design, and innovation
@@ -112,20 +116,20 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 border-0 shadow-card animate-scale-in"
+              className="group hover:shadow-glow transition-all duration-500 hover:-translate-y-3 border-0 shadow-primary bg-gradient-card animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <div className="p-3 bg-gradient-primary rounded-lg text-white group-hover:bg-gradient-accent group-hover:scale-110 transition-all duration-300">
                       {project.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      <CardTitle className="text-xl font-bold text-foreground group-hover:bg-gradient-primary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {project.title}
                       </CardTitle>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm bg-gradient-accent bg-clip-text text-transparent font-medium">
                         {project.category}
                       </p>
                     </div>
@@ -143,11 +147,14 @@ const Projects = () => {
               <CardContent className="space-y-6">
                 {/* Highlights */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Key Features</h4>
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center">
+                    <span className="w-2 h-2 bg-gradient-primary rounded-full mr-2"></span>
+                    Key Features
+                  </h4>
                   <div className="grid grid-cols-2 gap-2">
                     {project.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
+                      <div key={idx} className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        <div className="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
                         {highlight}
                       </div>
                     ))}
@@ -156,13 +163,16 @@ const Projects = () => {
 
                 {/* Technologies */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Technologies</h4>
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center">
+                    <span className="w-2 h-2 bg-gradient-secondary rounded-full mr-2"></span>
+                    Technologies
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
                       <Badge 
                         key={idx} 
                         variant="secondary" 
-                        className="text-xs hover:bg-primary hover:text-white transition-colors cursor-default"
+                        className="text-xs hover:bg-gradient-primary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
                       >
                         {tech}
                       </Badge>
@@ -175,7 +185,7 @@ const Projects = () => {
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="flex-1 group/btn hover:bg-primary hover:text-white"
+                    className="flex-1 group/btn hover:bg-gradient-primary hover:text-white hover:border-primary"
                   >
                     <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
                     Code
@@ -183,7 +193,7 @@ const Projects = () => {
                   <Button 
                     variant="default" 
                     size="sm" 
-                    className="flex-1 group/btn"
+                    className="flex-1 group/btn bg-gradient-accent hover:bg-gradient-primary hover:scale-105"
                   >
                     <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
                     Live Demo

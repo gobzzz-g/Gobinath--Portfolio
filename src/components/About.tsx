@@ -33,12 +33,15 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
+    <section id="about" className="py-20 bg-gradient-card relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-accent rounded-full opacity-10 -translate-y-20 translate-x-20"></div>
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-secondary rounded-full opacity-15 translate-y-16 -translate-x-16"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            About Me
+            About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A passionate student exploring the fascinating world of technology, design, and innovation
@@ -51,8 +54,10 @@ const About = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center">
-                  <GraduationCap className="h-6 w-6 text-primary mr-3" />
-                  My Journey
+                  <div className="p-2 bg-gradient-primary rounded-lg mr-3">
+                    <GraduationCap className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">My Journey</span>
                 </h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   I'm an undergraduate student pursuing B.E. in Computer Science and Design at SNS College of Engineering. 
@@ -63,8 +68,10 @@ const About = () => {
 
               <div>
                 <h4 className="text-xl font-semibold text-foreground mb-3 flex items-center">
-                  <Heart className="h-5 w-5 text-primary mr-2" />
-                  What Drives Me
+                  <div className="p-1.5 bg-gradient-accent rounded-lg mr-2">
+                    <Heart className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="bg-gradient-accent bg-clip-text text-transparent">What Drives Me</span>
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">
                   I believe in the power of combining technical expertise with creative design thinking. 
@@ -75,15 +82,17 @@ const About = () => {
               </div>
 
               {/* Education Card */}
-              <Card className="border-l-4 border-l-primary shadow-card">
+              <Card className="border-l-4 border-l-primary shadow-primary bg-gradient-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
-                  <h4 className="text-lg font-semibold text-foreground mb-2">
+                  <h4 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                    <span className="w-2 h-2 bg-gradient-primary rounded-full mr-2 animate-pulse-color"></span>
                     {education.degree}
                   </h4>
-                  <p className="text-primary font-medium mb-1">
+                  <p className="text-primary font-medium mb-1 bg-gradient-primary bg-clip-text text-transparent">
                     {education.institution}
                   </p>
-                  <p className="text-sm text-muted-foreground mb-3">
+                  <p className="text-sm text-success font-medium mb-3 flex items-center">
+                    <span className="w-1.5 h-1.5 bg-success rounded-full mr-1.5"></span>
                     {education.status}
                   </p>
                   <p className="text-muted-foreground">
@@ -95,19 +104,19 @@ const About = () => {
           </div>
 
           {/* Skills & Attributes */}
-          <div className="animate-slide-in">
+          <div className="animate-slide-in relative z-10">
             <h3 className="text-2xl font-semibold text-foreground mb-6">
-              Core Strengths
+              Core <span className="bg-gradient-accent bg-clip-text text-transparent">Strengths</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {skills.map((skill, index) => (
                 <Card 
                   key={index} 
-                  className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                  className="group hover:shadow-primary transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-gradient-card border-0"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                      <div className="flex-shrink-0 p-3 bg-gradient-primary rounded-lg text-white group-hover:bg-gradient-accent group-hover:scale-110 transition-all duration-300">
                         {skill.icon}
                       </div>
                       <div>
