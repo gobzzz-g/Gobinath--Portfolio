@@ -7,11 +7,11 @@
 @layer base {
   :root {
     /* Base colors - Vibrant and modern */
-    --background: 240 30% 97%;
+    --background: 225 50% 95%;
     --foreground: 220 25% 15%;
 
     /* Card and surface colors */
-    --card: 240 50% 98%;
+    --card: 225 60% 98%;
     --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
