@@ -1,6 +1,6 @@
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import profilePicture from "@/assets/profile-picture.jpg";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -85,7 +85,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-glow"></div>
               <div className="absolute inset-2 bg-gradient-primary rounded-full blur-xl opacity-40"></div>
               <img
-                src={heroImage}
+                src={profilePicture}
                 alt="Gobinath.G"
                 className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-elegant border-4 border-white hover:scale-105 transition-transform duration-500"
               />
