@@ -6,12 +6,12 @@
 
 @layer base {
   :root {
-    /* Base colors - Clean and modern */
-    --background: 0 0% 100%;
+    /* Base colors - Vibrant and modern */
+    --background: 240 30% 97%;
     --foreground: 220 25% 15%;
 
     /* Card and surface colors */
-    --card: 0 0% 100%;
+    --card: 240 50% 98%;
     --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
