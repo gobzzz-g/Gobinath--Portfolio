@@ -57,6 +57,7 @@
     --gradient-hero: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 25%, hsl(285 100% 65%) 75%, hsl(315 100% 70%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(225 30% 98%) 100%);
     --gradient-accent: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%);
+    --gradient-background: linear-gradient(135deg, hsl(285 40% 96%) 0%, hsl(225 40% 96%) 100%);
 
     /* Professional shadows with color */
     --shadow-primary: 0 10px 40px -10px hsl(225 100% 55% / 0.25);
