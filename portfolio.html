@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gobinath.G - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        :root {
+            /* Base colors - Vibrant and modern */
+            --background: 225 50% 95%;
+            --foreground: 220 25% 15%;
+
+            /* Card and surface colors */
+            --card: 225 60% 98%;
+            --card-foreground: 220 25% 15%;
+
+            --popover: 0 0% 100%;
+            --popover-foreground: 220 25% 15%;
+
+            /* Vibrant primary brand colors - Professional blue spectrum */
+            --primary: 225 100% 55%;
+            --primary-foreground: 0 0% 100%;
+            --primary-glow: 240 100% 65%;
+            --primary-dark: 225 100% 45%;
+
+            /* Rich secondary colors */
+            --secondary: 225 15% 96%;
+            --secondary-foreground: 225 25% 25%;
+
+            /* Professional muted colors */
+            --muted: 225 15% 96%;
+            --muted-foreground: 225 15% 50%;
+
+            /* Vibrant accent colors */
+            --accent: 285 100% 65%;
+            --accent-foreground: 0 0% 100%;
+            --accent-light: 285 100% 85%;
+
+            /* Success and status colors */
+            --success: 145 85% 45%;
+            --success-foreground: 0 0% 100%;
+            --warning: 45 100% 55%;
+            --warning-foreground: 0 0% 100%;
+            --destructive: 0 85% 60%;
+            --destructive-foreground: 0 0% 100%;
+
+            /* Border and input styling */
+            --border: 225 20% 88%;
+            --input: 225 20% 88%;
+            --ring: 225 100% 55%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, hsl(270 50% 95%) 0%, hsl(200 50% 95%) 100%);
+            color: hsl(var(--foreground));
+        }
+
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 25%, hsl(285 100% 65%) 75%, hsl(315 100% 70%) 100%);
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%);
+        }
+
+        .bg-gradient-card {
+            background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(225 30% 98%) 100%);
+        }
+
+        .bg-gradient-accent {
+            background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%);
+        }
+
+        .text-primary {
+            color: hsl(var(--primary));
+        }
+
+        .text-foreground {
+            color: hsl(var(--foreground));
+        }
+
+        .text-muted-foreground {
+            color: hsl(var(--muted-foreground));
+        }
+
+        .text-success {
+            color: hsl(var(--success));
+        }
+
+        .text-accent {
+            color: hsl(var(--accent));
+        }
+
+        .border-primary {
+            border-color: hsl(var(--primary));
+        }
+
+        .bg-primary {
+            background-color: hsl(var(--primary));
+        }
+
+        .bg-success {
+            background-color: hsl(var(--success));
+        }
+
+        .bg-accent {
+            background-color: hsl(var(--accent));
+        }
+
+        .shadow-elegant {
+            box-shadow: 0 20px 60px -10px hsl(225 50% 30% / 0.15);
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 60px hsl(225 100% 55% / 0.3);
+        }
+
+        .shadow-primary {
+            box-shadow: 0 10px 40px -10px hsl(225 100% 55% / 0.25);
+        }
+
+        .shadow-card {
+            box-shadow: 0 8px 30px hsl(225 25% 20% / 0.12);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px -10px hsl(225 100% 55% / 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid hsl(var(--accent));
+            color: hsl(var(--accent));
+            background: transparent;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .btn-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            color: hsl(var(--muted-foreground));
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .card {
+            background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(225 30% 98%) 100%);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px hsl(225 25% 20% / 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 60px hsl(225 100% 55% / 0.3);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.5rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+        }
+
+        .textarea-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.5rem;
+            background: white;
+            resize: vertical;
+            min-height: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .textarea-field:focus {
+            outline: none;
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 9999px;
+        }
+
+        .badge-primary {
+            background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%);
+            color: white;
+        }
+
+        .badge-secondary {
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse-color {
+            0%, 100% { background-color: hsl(225 100% 55%); }
+            50% { background-color: hsl(285 100% 65%); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slide-in {
+            0% { opacity: 0; transform: translateX(-30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scale-in {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-color {
+            animation: pulse-color 3s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 25%, hsl(285 100% 65%) 75%, hsl(315 100% 70%) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 2s linear infinite;
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+
+        .animate-slide-in {
+            animation: slide-in 0.5s ease-out;
+        }
+
+        .animate-scale-in {
+            animation: scale-in 0.3s ease-out;
+        }
+
+        .skill-progress {
+            height: 8px;
+            background: hsl(var(--secondary));
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%);
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        /* Navigation Styles */
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid hsl(var(--border) / 0.5);
+        }
+
+        .nav-link {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: hsl(var(--muted-foreground));
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: hsl(var(--primary));
+            border-bottom-color: hsl(var(--primary));
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 0.75rem;
+            border: 1px solid hsl(var(--border) / 0.5);
+            box-shadow: 0 8px 30px hsl(225 25% 20% / 0.12);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 0.75rem;
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .mobile-nav-link:hover, .mobile-nav-link.active {
+            color: hsl(var(--primary));
+            background: hsl(var(--primary) / 0.1);
+        }
+
+        /* Responsive utilities */
+        @media (max-width: 768px) {
+            .md\\:hidden {
+                display: none !important;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\\:block {
+                display: block !important;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Icon styles */
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .icon-lg {
+            width: 2rem;
+            height: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-fixed">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <button onclick="scrollToSection('home')" class="text-xl font-bold text-foreground hover:text-primary transition-colors">
+                        Gobinath.G
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link" onclick="scrollToSection('home')">Home</a>
+                        <a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a>
+                        <a href="#projects" class="nav-link" onclick="scrollToSection('projects')">Projects</a>
+                        <a href="#achievements" class="nav-link" onclick="scrollToSection('achievements')">Achievements</a>
+                        <a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="mobile-menu-btn">
+                    <button class="btn-icon" onclick="toggleMobileMenu()">
+                        <svg class="icon menu-icon" viewBox="0 0 24 24"><path d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11 2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6"/><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg class="icon close-icon hidden" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="#home" class="mobile-nav-link" onclick="scrollToSection('home'); closeMobileMenu()">Home</a>
+                <a href="#about" class="mobile-nav-link" onclick="scrollToSection('about'); closeMobileMenu()">About</a>
+                <a href="#projects" class="mobile-nav-link" onclick="scrollToSection('projects'); closeMobileMenu()">Projects</a>
+                <a href="#achievements" class="mobile-nav-link" onclick="scrollToSection('achievements'); closeMobileMenu()">Achievements</a>
+                <a href="#contact" class="mobile-nav-link" onclick="scrollToSection('contact'); closeMobileMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-card pt-16">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-gradient-accent rounded-full opacity-30 animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-20 w-24 h-24 bg-gradient-accent rounded-full opacity-25 animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 right-10 w-12 h-12 bg-success rounded-full opacity-35 animate-float" style="animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="text-center lg:text-left animate-fade-in">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                        Hi, I'm 
+                        <span class="animate-shimmer">
+                            Gobinath.G
+                        </span>
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl text-muted-foreground mb-4 font-medium">
+                        <span class="text-primary">Computer Science and Design Student</span>
+                    </p>
+                    
+                    <p class="text-lg text-muted-foreground mb-2 flex items-center justify-center lg:justify-start">
+                        <span class="w-2 h-2 bg-gradient-primary rounded-full mr-2 animate-pulse-color"></span>
+                        SNS College of Engineering
+                    </p>
+                    
+                    <p class="text-lg bg-gradient-accent bg-clip-text text-transparent font-semibold mb-8" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        "Designing solutions, developing impact."
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                        <button class="btn-primary group" onclick="scrollToSection('projects')">
+                            View My Work
+                            <svg class="icon ml-2 group-hover:translate-y-1 transition-transform" viewBox="0 0 24 24"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
+                        </button>
+                        
+                        <button class="btn-outline group">
+                            <svg class="icon mr-2 group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5 5-5 5 5m-5-5v12"/></svg>
+                            Download Resume
+                        </button>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex gap-6 justify-center lg:justify-start">
+                        <button class="btn-icon hover:bg-primary/10 hover:text-primary">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </button>
+                        <button class="btn-icon hover:bg-accent/10 hover:text-accent">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </button>
+                        <button class="btn-icon hover:bg-success/10 hover:text-success">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="flex justify-center lg:justify-end animate-scale-in">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30"></div>
+                        <div class="absolute inset-2 bg-gradient-primary rounded-full blur-xl opacity-40"></div>
+                        <img
+                            src="src/assets/profile-picture.jpg"
+                            alt="Gobinath.G"
+                            class="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-elegant border-4 border-white hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMDAgMTAwQzE2MS4yIDEwMCAxMzAgMTMxLjIgMTMwIDE3MEMxMzAgMjA4LjggMTYxLjIgMjQwIDIwMCAyNDBDMjM4LjggMjQwIDI3MCAyMDguOCAyNzAgMTcwQzI3MCAxMzEuMiAyMzguOCAxMDAgMjAwIDEwMFoiIGZpbGw9IiM5Q0EzQUYiLz4KPHA="'"
+                        />
+                        <div class="absolute -top-4 -right-4 w-8 h-8 bg-success rounded-full animate-pulse-color"></div>
+                        <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-warning rounded-full animate-float"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <button class="btn-icon animate-bounce" onclick="scrollToSection('about')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-card relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-accent rounded-full opacity-10 -translate-y-20 translate-x-20"></div>
+        <div class="absolute bottom-0 left-0 w-32 h-32 bg-secondary rounded-full opacity-15 translate-y-16 -translate-x-16"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                    About <span style="background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Me</span>
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    A passionate student exploring the fascinating world of technology, design, and innovation
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Personal Story -->
+                <div class="animate-slide-in">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-foreground mb-4 flex items-center">
+                                <div class="p-2 bg-gradient-primary rounded-lg mr-3">
+                                    <svg class="icon text-white" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                </div>
+                                <span style="background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">My Journey</span>
+                            </h3>
+                            <p class="text-muted-foreground text-lg leading-relaxed">
+                                I'm an undergraduate student pursuing B.E. in Computer Science and Design at SNS College of Engineering. 
+                                My academic journey has been driven by a deep fascination with how technology can be leveraged to create 
+                                meaningful solutions that impact people's lives.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold text-foreground mb-3 flex items-center">
+                                <div class="p-1.5 bg-gradient-accent rounded-lg mr-2">
+                                    <svg class="icon text-white w-5 h-5" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
+                                </div>
+                                <span style="background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">What Drives Me</span>
+                            </h4>
+                            <p class="text-muted-foreground leading-relaxed">
+                                I believe in the power of combining technical expertise with creative design thinking. 
+                                My passion lies in developing innovative solutions that bridge the gap between complex technology 
+                                and user-friendly experiences. Whether it's coding a new application or designing an intuitive interface, 
+                                I strive to create work that is both technically sound and aesthetically pleasing.
+                            </p>
+                        </div>
+
+                        <!-- Education Card -->
+                        <div class="card border-l-4 border-l-primary">
+                            <h4 class="text-lg font-semibold text-foreground mb-2 flex items-center">
+                                <span class="w-2 h-2 bg-gradient-primary rounded-full mr-2 animate-pulse-color"></span>
+                                B.E. in Computer Science and Design
+                            </h4>
+                            <p class="text-primary font-medium mb-1" style="background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                SNS College of Engineering
+                            </p>
+                            <p class="text-sm text-success font-medium mb-3 flex items-center">
+                                <span class="w-1.5 h-1.5 bg-success rounded-full mr-1.5"></span>
+                                Currently Pursuing
+                            </p>
+                            <p class="text-muted-foreground">
+                                Specializing in the intersection of computer science and design thinking
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Attributes -->
+                <div class="animate-slide-in relative z-10">
+                    <h3 class="text-2xl font-semibold text-foreground mb-6">
+                        Core <span style="background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Strengths</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="card group">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 p-3 bg-gradient-primary rounded-lg text-white">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M16 18l2-2-4-4-4 4-2-2"/><path d="M12 5v13"/><path d="m17 8-5-5-5 5"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground mb-2">Software Development</h4>
+                                    <p class="text-sm text-muted-foreground">
+                                        Passionate about creating efficient and innovative solutions through code
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card group">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 p-3 bg-gradient-primary rounded-lg text-white">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground mb-2">UI/UX Design</h4>
+                                    <p class="text-sm text-muted-foreground">
+                                        Focused on user-centric design principles and creating intuitive interfaces
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card group">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 p-3 bg-gradient-primary rounded-lg text-white">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground mb-2">Teamwork & Leadership</h4>
+                                    <p class="text-sm text-muted-foreground">
+                                        Strong collaborative skills and experience leading project teams
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card group">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 p-3 bg-gradient-primary rounded-lg text-white">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground mb-2">Problem Solving</h4>
+                                    <p class="text-sm text-muted-foreground">
+                                        Analytical mindset with a passion for tackling complex technical challenges
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Interests -->
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold text-foreground mb-4">
+                            Beyond Academics
+                        </h4>
+                        <p class="text-muted-foreground leading-relaxed">
+                            When I'm not immersed in code or design projects, I enjoy exploring new technologies, 
+                            participating in hackathons, and contributing to open-source projects. I'm also passionate 
+                            about staying updated with the latest trends in AI, IoT, and emerging technologies that 
+                            shape our digital future.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-background relative overflow-hidden">
+        <div class="absolute top-10 left-10 w-24 h-24 bg-secondary rounded-full opacity-10"></div>
+        <div class="absolute bottom-20 right-20 w-32 h-32 bg-gradient-primary rounded-full opacity-10"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-accent rounded-full opacity-15"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                    Featured <span style="background: linear-gradient(135deg, hsl(225 100% 55%) 0%, hsl(240 100% 65%) 50%, hsl(285 100% 65%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Projects</span>
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    A showcase of my technical projects and creative solutions that demonstrate my skills in software development, design, and innovation
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1: AudioNest -->
+                <div class="card animate-scale-in">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-gradient-primary rounded-lg text-white">
+                                <svg class="icon-lg" viewBox="0 0 24 24"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zM8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm13.5-2a.5.5 0 0 1 .5.5V8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V7.5a.5.5 0 0 1 .5-.5h2z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-foreground">AudioNest</h3>
+                                <p class="text-sm text-accent font-medium" style="background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    IoT & Hardware
+                                </p>
+                            </div>
+                        </div>
+                        <span class="badge badge-primary">Featured Project</span>
+                    </div>
+                    
+                    <p class="text-muted-foreground leading-relaxed mb-6">
+                        An innovative smart earbud project integrating obstacle detection using advanced sensors and premium voice outputs. 
+                        Features real-time environmental awareness and seamless audio experience.
+                    </p>
+
+                    <!-- Highlights -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-gradient-primary rounded-full mr-2"></span>
+                            Key Features
+                        </h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Real-time obstacle detection
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Premium audio quality
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Smart sensor integration
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                User-friendly interface
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                            Technologies
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-secondary">IoT</span>
+                            <span class="badge badge-secondary">Sensors</span>
+                            <span class="badge badge-secondary">Audio Processing</span>
+                            <span class="badge badge-secondary">Embedded Systems</span>
+                            <span class="badge badge-secondary">Arduino</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <button class="flex-1 btn-outline text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            Code
+                        </button>
+                        <button class="flex-1 btn-primary text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Portfolio Website -->
+                <div class="card animate-scale-in">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-gradient-primary rounded-lg text-white">
+                                <svg class="icon-lg" viewBox="0 0 24 24"><path d="M16 18l2-2-4-4-4 4-2-2"/><path d="M12 5v13"/><path d="m17 8-5-5-5 5"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-foreground">Portfolio Website</h3>
+                                <p class="text-sm text-accent font-medium" style="background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    Web Development
+                                </p>
+                            </div>
+                        </div>
+                        <span class="badge bg-green-500 text-white">Live</span>
+                    </div>
+                    
+                    <p class="text-muted-foreground leading-relaxed mb-6">
+                        A modern, responsive personal portfolio website built with React and TypeScript. 
+                        Features smooth animations, dark mode support, and optimized performance.
+                    </p>
+
+                    <!-- Highlights -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-gradient-primary rounded-full mr-2"></span>
+                            Key Features
+                        </h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Responsive design
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Smooth animations
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Modern UI/UX
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Performance optimized
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                            Technologies
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-secondary">React</span>
+                            <span class="badge badge-secondary">TypeScript</span>
+                            <span class="badge badge-secondary">Tailwind CSS</span>
+                            <span class="badge badge-secondary">Framer Motion</span>
+                            <span class="badge badge-secondary">Vite</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <button class="flex-1 btn-outline text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            Code
+                        </button>
+                        <button class="flex-1 btn-primary text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Mobile App Concept -->
+                <div class="card animate-scale-in">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-gradient-primary rounded-lg text-white">
+                                <svg class="icon-lg" viewBox="0 0 24 24"><path d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 9h6v6H9z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-foreground">Mobile App Concept</h3>
+                                <p class="text-sm text-accent font-medium" style="background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    UI/UX Design
+                                </p>
+                            </div>
+                        </div>
+                        <span class="badge bg-purple-500 text-white">Design Phase</span>
+                    </div>
+                    
+                    <p class="text-muted-foreground leading-relaxed mb-6">
+                        A conceptual mobile application focusing on user experience and intuitive design. 
+                        Demonstrates proficiency in mobile UI/UX principles and modern design patterns.
+                    </p>
+
+                    <!-- Highlights -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-gradient-primary rounded-full mr-2"></span>
+                            Key Features
+                        </h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                User-centered design
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Interactive prototypes
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Design system
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Accessibility focused
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                            Technologies
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-secondary">Figma</span>
+                            <span class="badge badge-secondary">UI/UX Design</span>
+                            <span class="badge badge-secondary">Prototyping</span>
+                            <span class="badge badge-secondary">User Research</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <button class="flex-1 btn-outline text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            Code
+                        </button>
+                        <button class="flex-1 btn-primary text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: AI Learning Assistant -->
+                <div class="card animate-scale-in">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-gradient-primary rounded-lg text-white">
+                                <svg class="icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-foreground">AI Learning Assistant</h3>
+                                <p class="text-sm text-accent font-medium" style="background: linear-gradient(45deg, hsl(285 100% 65%) 0%, hsl(225 100% 55%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                    AI/ML
+                                </p>
+                            </div>
+                        </div>
+                        <span class="badge bg-yellow-500 text-white">In Development</span>
+                    </div>
+                    
+                    <p class="text-muted-foreground leading-relaxed mb-6">
+                        An intelligent learning companion application that uses machine learning to personalize educational content 
+                        and provide adaptive learning experiences.
+                    </p>
+
+                    <!-- Highlights -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-gradient-primary rounded-full mr-2"></span>
+                            Key Features
+                        </h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Personalized learning
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                ML algorithms
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Adaptive content
+                            </div>
+                            <div class="flex items-center text-sm text-muted-foreground">
+                                <div class="w-1.5 h-1.5 bg-gradient-accent rounded-full mr-2 animate-pulse-color"></div>
+                                Progress tracking
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-foreground mb-3 flex items-center">
+                            <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+                            Technologies
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-secondary">Python</span>
+                            <span class="badge badge-secondary">Machine Learning</span>
+                            <span class="badge badge-secondary">TensorFlow</span>
+                            <span class="badge badge-secondary">Flask</span>
+                            <span class="badge badge-secondary">AI</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-3">
+                        <button class="flex-1 btn-outline text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            Code
+                        </button>
+                        <button class="flex-1 btn-primary text-sm py-2">
+                            <svg class="icon mr-2 w-4 h-4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16 animate-fade-in">
+                <p class="text-muted-foreground mb-6">
+                    Interested in collaborating or want to see more of my work?
+                </p>
+                <button class="btn-primary group">
+                    <svg class="icon mr-2 group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View All Projects on GitHub
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gradient-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                    Achievements & Recognition
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    A collection of my academic achievements, certifications, and recognitions that highlight my journey and growth
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Achievements -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-semibold text-foreground mb-6 animate-slide-in">
+                        Major Achievements
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Achievement 1 -->
+                        <div class="card">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-start space-x-4">
+                                    <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                        <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <h4 class="text-lg font-bold text-foreground">TAKSHAK - Management Maestro</h4>
+                                            <span class="badge bg-blue-500 text-white ml-2">Event</span>
+                                        </div>
+                                        <p class="text-sm text-primary font-medium">Technical Event Participation</p>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <span class="badge badge-secondary text-xs border border-blue-200 text-blue-600">Leadership</span>
+                                            <div class="flex items-center text-xs text-muted-foreground">
+                                                <svg class="icon w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+                                                2024
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-muted-foreground leading-relaxed">
+                                    Participated in the prestigious TAKSHAK Management Maestro event, demonstrating leadership and management skills in a competitive environment.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Achievement 2 -->
+                        <div class="card">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-start space-x-4">
+                                    <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                        <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <h4 class="text-lg font-bold text-foreground">SQL Programming Certification</h4>
+                                            <span class="badge bg-green-500 text-white ml-2">Certified</span>
+                                        </div>
+                                        <p class="text-sm text-primary font-medium">Professional Certification</p>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <span class="badge badge-secondary text-xs border border-green-200 text-green-600">Technical</span>
+                                            <div class="flex items-center text-xs text-muted-foreground">
+                                                <svg class="icon w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+                                                2024
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-muted-foreground leading-relaxed">
+                                    Successfully completed comprehensive SQL programming certification, demonstrating proficiency in database management and query optimization.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Achievement 3 -->
+                        <div class="card">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-start space-x-4">
+                                    <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <h4 class="text-lg font-bold text-foreground">Academic Excellence</h4>
+                                            <span class="badge bg-purple-500 text-white ml-2">Excellence</span>
+                                        </div>
+                                        <p class="text-sm text-primary font-medium">SNS College of Engineering</p>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <span class="badge badge-secondary text-xs border border-purple-200 text-purple-600">Academic</span>
+                                            <div class="flex items-center text-xs text-muted-foreground">
+                                                <svg class="icon w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+                                                Ongoing
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-muted-foreground leading-relaxed">
+                                    Consistent academic performance in Computer Science and Design program, maintaining high standards in coursework and projects.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Achievement 4 -->
+                        <div class="card">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-start space-x-4">
+                                    <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                        <svg class="icon" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6m0 5v10M6 9h10.5M6 19v.5a2.5 2.5 0 0 0 2.5 2.5H9"/></svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <h4 class="text-lg font-bold text-foreground">Innovation Project - AudioNest</h4>
+                                            <span class="badge badge-primary ml-2">Featured</span>
+                                        </div>
+                                        <p class="text-sm text-primary font-medium">Personal Project</p>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <span class="badge badge-secondary text-xs border border-orange-200 text-orange-600">Innovation</span>
+                                            <div class="flex items-center text-xs text-muted-foreground">
+                                                <svg class="icon w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+                                                2024
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-muted-foreground leading-relaxed">
+                                    Developed an innovative smart earbud system with obstacle detection capabilities, showcasing skills in IoT and embedded systems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Progress -->
+                <div class="animate-slide-in">
+                    <h3 class="text-2xl font-semibold text-foreground mb-6">
+                        Technical Skills
+                    </h3>
+                    <div class="card">
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-foreground">JavaScript</span>
+                                    <span class="text-sm text-muted-foreground">85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-foreground">Python</span>
+                                    <span class="text-sm text-muted-foreground">80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-foreground">React</span>
+                                    <span class="text-sm text-muted-foreground">75%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-foreground">UI/UX Design</span>
+                                    <span class="text-sm text-muted-foreground">70%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 70%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-foreground">SQL</span>
+                                    <span class="text-sm text-muted-foreground">85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-foreground">IoT Development</span>
+                                    <span class="text-sm text-muted-foreground">65%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="card text-center">
+                            <div class="text-2xl font-bold text-primary">4+</div>
+                            <div class="text-sm text-muted-foreground">Projects</div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="text-2xl font-bold text-primary">2+</div>
+                            <div class="text-sm text-muted-foreground">Certifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                    Get In Touch
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about technology and design
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Contact Information -->
+                <div class="lg:col-span-1 space-y-8 animate-slide-in">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-foreground mb-6">
+                            Contact Information
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 group">
+                                <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Email</p>
+                                    <a href="mailto:gobinath.g@email.com" class="text-foreground hover:text-primary transition-colors font-medium">
+                                        gobinath.g@email.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 group">
+                                <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Phone</p>
+                                    <a href="tel:+91XXXXXXXXX" class="text-foreground hover:text-primary transition-colors font-medium">
+                                        +91 XXXXX XXXXX
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 group">
+                                <div class="p-3 bg-primary/10 rounded-lg text-primary">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Location</p>
+                                    <span class="text-foreground font-medium">Tamil Nadu, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-foreground mb-4">
+                            Connect With Me
+                        </h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/gobinath-g" target="_blank" rel="noopener noreferrer" class="p-3 bg-secondary rounded-lg text-muted-foreground hover:text-gray-900 transition-all duration-300 hover:scale-110 hover:shadow-md">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                            <a href="https://linkedin.com/in/gobinath-g" target="_blank" rel="noopener noreferrer" class="p-3 bg-secondary rounded-lg text-muted-foreground hover:text-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-md">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="https://twitter.com/gobinath_g" target="_blank" rel="noopener noreferrer" class="p-3 bg-secondary rounded-lg text-muted-foreground hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:shadow-md">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quote -->
+                    <div class="card border-l-4 border-l-primary">
+                        <blockquote class="text-muted-foreground italic">
+                            "The best way to predict the future is to create it. Let's build something amazing together!"
+                        </blockquote>
+                        <footer class="mt-2 text-sm text-primary font-medium">
+                            - Gobinath.G
+                        </footer>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 animate-scale-in">
+                    <div class="card shadow-elegant">
+                        <h3 class="text-2xl font-semibold text-foreground mb-4">
+                            Send Me a Message
+                        </h3>
+                        <p class="text-muted-foreground mb-6">
+                            Fill out the form below and I'll get back to you as soon as possible.
+                        </p>
+                        
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="block text-sm font-medium text-foreground">Name *</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        placeholder="Your full name"
+                                        class="input-field"
+                                    />
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-medium text-foreground">Email *</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        placeholder="your.email@example.com"
+                                        class="input-field"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="subject" class="block text-sm font-medium text-foreground">Subject *</label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    required
+                                    placeholder="What would you like to discuss?"
+                                    class="input-field"
+                                />
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="message" class="block text-sm font-medium text-foreground">Message *</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    placeholder="Tell me more about your project, collaboration ideas, or just say hello!"
+                                    class="textarea-field"
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary w-full group" id="submit-btn">
+                                <svg class="icon mr-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-card border-t border-border/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Footer Content -->
+            <div class="py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand Section -->
+                <div class="col-span-1">
+                    <h3 class="text-2xl font-bold text-foreground mb-4">
+                        Gobinath.G
+                    </h3>
+                    <p class="text-muted-foreground mb-6 leading-relaxed">
+                        Computer Science and Design Student passionate about creating innovative solutions 
+                        that bridge technology and design.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/gobinath-g" target="_blank" rel="noopener noreferrer" class="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/gobinath-g" target="_blank" rel="noopener noreferrer" class="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="mailto:gobinath.g@email.com" class="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-span-1">
+                    <h4 class="text-lg font-semibold text-foreground mb-4">
+                        Quick Links
+                    </h4>
+                    <nav class="space-y-3">
+                        <button onclick="scrollToSection('home')" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-left">Home</button>
+                        <button onclick="scrollToSection('about')" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-left">About</button>
+                        <button onclick="scrollToSection('projects')" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-left">Projects</button>
+                        <button onclick="scrollToSection('achievements')" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-left">Achievements</button>
+                        <button onclick="scrollToSection('contact')" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-left">Contact</button>
+                    </nav>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-span-1">
+                    <h4 class="text-lg font-semibold text-foreground mb-4">
+                        Get In Touch
+                    </h4>
+                    <div class="space-y-3 text-muted-foreground">
+                        <p>
+                            <strong class="text-foreground">Email:</strong><br />
+                            gobinath.g@email.com
+                        </p>
+                        <p>
+                            <strong class="text-foreground">Location:</strong><br />
+                            Tamil Nadu, India
+                        </p>
+                        <p>
+                            <strong class="text-foreground">Education:</strong><br />
+                            SNS College of Engineering
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="py-6 border-t border-border/50">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="flex items-center text-muted-foreground">
+                        <span>© 2024 Gobinath.G. Made with</span>
+                        <svg class="icon w-4 h-4 mx-1 text-red-500" style="animation: pulse 2s ease-in-out infinite;" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
+                        <span>and lots of ☕</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 text-sm text-muted-foreground">
+                        <span>Built with React + TypeScript</span>
+                        <span>•</span>
+                        <span>Designed for impact</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        let activeSection = 'home';
+        let mobileMenuOpen = false;
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            closeMobileMenu();
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            const closeIcon = document.querySelector('.close-icon');
+            
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                mobileMenu.classList.add('active');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            const closeIcon = document.querySelector('.close-icon');
+            
+            mobileMenuOpen = false;
+            mobileMenu.classList.remove('active');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+
+        // Update active navigation on scroll
+        function updateActiveNav() {
+            const sections = ['home', 'about', 'projects', 'achievements', 'contact'];
+            const scrollPosition = window.scrollY + 100;
+
+            for (const sectionId of sections) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        if (activeSection !== sectionId) {
+                            activeSection = sectionId;
+                            
+                            // Update desktop nav
+                            document.querySelectorAll('.nav-link').forEach(link => {
+                                link.classList.remove('active');
+                                if (link.getAttribute('href') === `#${sectionId}`) {
+                                    link.classList.add('active');
+                                }
+                            });
+                            
+                            // Update mobile nav
+                            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                                link.classList.remove('active');
+                                if (link.getAttribute('href') === `#${sectionId}`) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const originalContent = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = `
+                <div class="flex items-center">
+                    <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Sending...
+                </div>
+            `;
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                alert('Message Sent Successfully! Thank you for reaching out. I\'ll get back to you soon.');
+                
+                // Reset form
+                event.target.reset();
+                
+                // Reset button
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+            }, 1000);
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveNav();
+            
+            // Animate skill progress bars on scroll
+            const skillBars = document.querySelectorAll('.skill-progress-bar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    }
+                });
+            });
+            
+            skillBars.forEach(bar => observer.observe(bar));
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileMenuOpen && !mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
