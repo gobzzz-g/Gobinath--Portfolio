@@ -25,7 +25,7 @@ const Footer = () => {
     },
     {
       icon: <Mail className="h-5 w-5" />,
-      href: "mailto:gobinath.g@email.com",
+      href: "mailto:gobinath2702@gmail.com",
       label: "Email"
     }
   ];
@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="space-y-3 text-muted-foreground">
               <p>
                 <strong className="text-foreground">Email:</strong><br />
-                gobinath.g@email.com
+                gobinath2702@gmail.com
               </p>
               <p>
                 <strong className="text-foreground">Location:</strong><br />
