@@ -60,7 +60,7 @@ const Projects = () => {
       ]
     },
     {
-      title: "AI Learning Assistant",
+      title: "Generative AI",
       description: "An intelligent learning companion application that uses machine learning to personalize educational content and provide adaptive learning experiences.",
       technologies: ["Python", "Machine Learning", "TensorFlow", "Flask", "AI"],
       icon: <Brain className="h-8 w-8" />,
