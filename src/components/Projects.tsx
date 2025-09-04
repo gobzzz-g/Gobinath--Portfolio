@@ -64,7 +64,7 @@ const Projects = () => {
       description: "An intelligent learning companion application that uses machine learning to personalize educational content and provide adaptive learning experiences.",
       technologies: ["Python", "Machine Learning", "TensorFlow", "Flask", "AI"],
       icon: <Brain className="h-8 w-8" />,
-      category: "AI/ML",
+      category: "Gen AI",
       status: "In Development",
       links: {
         github: "#",
