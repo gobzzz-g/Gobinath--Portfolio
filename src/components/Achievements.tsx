@@ -5,14 +5,14 @@ import { Badge } from "@/components/ui/badge";
 const Achievements = () => {
   const achievements = [
     {
-      title: "TAKSHAK - Management Maestro",
-      organization: "Technical Event Participation",
-      type: "Event Participation",
+      title: "Innovation Project - AudioNest",
+      organization: "Personal Project",
+      type: "Technical Innovation",
       date: "2024",
-      description: "Participated in the prestigious TAKSHAK Management Maestro event, demonstrating leadership and management skills in a competitive environment.",
-      icon: <Users className="h-6 w-6" />,
-      category: "Leadership",
-      badge: "Event"
+      description: "Developed an innovative smart earbud system with obstacle detection capabilities, showcasing skills in IoT and embedded systems.",
+      icon: <Trophy className="h-6 w-6" />,
+      category: "Innovation",
+      badge: "Featured"
     },
     {
       title: "SQL Programming Certification",
@@ -25,6 +25,16 @@ const Achievements = () => {
       badge: "Certified"
     },
     {
+      title: "TAKSHAK - Management Maestro",
+      organization: "Technical Event Participation",
+      type: "Event Participation",
+      date: "2024",
+      description: "Participated in the prestigious TAKSHAK Management Maestro event, demonstrating leadership and management skills in a competitive environment.",
+      icon: <Users className="h-6 w-6" />,
+      category: "Leadership",
+      badge: "Event"
+    },
+    {
       title: "Academic Excellence",
       organization: "SNS College of Engineering",
       type: "Academic Recognition",
@@ -33,16 +43,6 @@ const Achievements = () => {
       icon: <Star className="h-6 w-6" />,
       category: "Academic",
       badge: "Excellence"
-    },
-    {
-      title: "Innovation Project - AudioNest",
-      organization: "Personal Project",
-      type: "Technical Innovation",
-      date: "2024",
-      description: "Developed an innovative smart earbud system with obstacle detection capabilities, showcasing skills in IoT and embedded systems.",
-      icon: <Trophy className="h-6 w-6" />,
-      category: "Innovation",
-      badge: "Featured"
     }
   ];
 
