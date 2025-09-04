@@ -47,8 +47,8 @@ const Achievements = () => {
   ];
 
   const skills = [
-    { name: "JavaScript", level: 85 },
-    { name: "Python", level: 80 },
+    { name: "Python", level: 85 },
+    { name: "JavaScript", level: 80 },
     { name: "React", level: 75 },
     { name: "UI/UX Design", level: 70 },
     { name: "SQL", level: 85 },
