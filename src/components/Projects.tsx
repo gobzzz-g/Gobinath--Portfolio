@@ -61,7 +61,7 @@ const Projects = () => {
     },
     {
       title: "Generative AI",
-      description: "An intelligent learning companion application that uses machine learning to personalize educational content and provide adaptive learning experiences.",
+      description: "Generative AI a type of artificial intelligence that creates new content like text, images, music, or code by learning patterns from existing data. It's used in applications like chatbots, art generation, and automated content creation.",
       technologies: ["Python", "Machine Learning", "TensorFlow", "Flask", "AI"],
       icon: <Brain className="h-8 w-8" />,
       category: "Gen AI",
