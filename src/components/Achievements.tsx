@@ -1,60 +1,63 @@
 import { Trophy, Award, FileText, Star, Calendar, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 const Achievements = () => {
-  const achievements = [
-    {
-      title: "Innovation Project - AudioNest",
-      organization: "Personal Project",
-      type: "Technical Innovation",
-      date: "2024",
-      description: "Developed an innovative smart earbud system with obstacle detection capabilities, showcasing skills in IoT and embedded systems.",
-      icon: <Trophy className="h-6 w-6" />,
-      category: "Innovation",
-      badge: "Featured"
-    },
-    {
-      title: "SQL Programming Certification",
-      organization: "Professional Certification",
-      type: "Technical Certification",
-      date: "2024",
-      description: "Successfully completed comprehensive SQL programming certification, demonstrating proficiency in database management and query optimization.",
-      icon: <FileText className="h-6 w-6" />,
-      category: "Technical",
-      badge: "Certified"
-    },
-    {
-      title: "TAKSHAK - Management Maestro",
-      organization: "Technical Event Participation",
-      type: "Event Participation",
-      date: "2024",
-      description: "Participated in the prestigious TAKSHAK Management Maestro event, demonstrating leadership and management skills in a competitive environment.",
-      icon: <Users className="h-6 w-6" />,
-      category: "Leadership",
-      badge: "Event"
-    },
-    {
-      title: "Academic Excellence",
-      organization: "SNS College of Engineering",
-      type: "Academic Recognition",
-      date: "Ongoing",
-      description: "Consistent academic performance in Computer Science and Design program, maintaining high standards in coursework and projects.",
-      icon: <Star className="h-6 w-6" />,
-      category: "Academic",
-      badge: "Excellence"
-    }
-  ];
-
-  const skills = [
-    { name: "Figma", level: 85 },
-    { name: "JavaScript", level: 80 },
-    { name: "React", level: 75 },
-    { name: "UI/UX Design", level: 70 },
-    { name: "SQL", level: 85 },
-    { name: "IoT Development", level: 65 }
-  ];
-
+  const achievements = [{
+    title: "Innovation Project - AudioNest",
+    organization: "Personal Project",
+    type: "Technical Innovation",
+    date: "2024",
+    description: "Developed an innovative smart earbud system with obstacle detection capabilities, showcasing skills in IoT and embedded systems.",
+    icon: <Trophy className="h-6 w-6" />,
+    category: "Innovation",
+    badge: "Featured"
+  }, {
+    title: "SQL Programming Certification",
+    organization: "Professional Certification",
+    type: "Technical Certification",
+    date: "2024",
+    description: "Successfully completed comprehensive SQL programming certification, demonstrating proficiency in database management and query optimization.",
+    icon: <FileText className="h-6 w-6" />,
+    category: "Technical",
+    badge: "Certified"
+  }, {
+    title: "TAKSHAK - Management Maestro",
+    organization: "Technical Event Participation",
+    type: "Event Participation",
+    date: "2024",
+    description: "Participated in the prestigious TAKSHAK Management Maestro event, demonstrating leadership and management skills in a competitive environment.",
+    icon: <Users className="h-6 w-6" />,
+    category: "Leadership",
+    badge: "Event"
+  }, {
+    title: "Academic Excellence",
+    organization: "SNS College of Engineering",
+    type: "Academic Recognition",
+    date: "Ongoing",
+    description: "Consistent academic performance in Computer Science and Design program, maintaining high standards in coursework and projects.",
+    icon: <Star className="h-6 w-6" />,
+    category: "Academic",
+    badge: "Excellence"
+  }];
+  const skills = [{
+    name: "Figma",
+    level: 85
+  }, {
+    name: "JavaScript",
+    level: 80
+  }, {
+    name: "React",
+    level: 75
+  }, {
+    name: "UI/UX Design",
+    level: 70
+  }, {
+    name: "SQL",
+    level: 85
+  }, {
+    name: "IoT Development",
+    level: 65
+  }];
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Leadership":
@@ -69,7 +72,6 @@ const Achievements = () => {
         return "bg-gray-500/10 text-gray-600 border-gray-200";
     }
   };
-
   const getBadgeColor = (badge: string) => {
     switch (badge) {
       case "Event":
@@ -84,13 +86,11 @@ const Achievements = () => {
         return "bg-secondary text-secondary-foreground";
     }
   };
-
-  return (
-    <section id="achievements" className="py-20 bg-gradient-subtle">
+  return <section id="achievements" className="py-20 bg-gradient-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-indigo-500">
             Achievements & Recognition
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -105,12 +105,9 @@ const Achievements = () => {
               Major Achievements
             </h3>
             <div className="space-y-6">
-              {achievements.map((achievement, index) => (
-                <Card 
-                  key={index}
-                  className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-scale-in border-0 shadow-card"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+              {achievements.map((achievement, index) => <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-scale-in border-0 shadow-card" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between">
                       <div className="flex items-start space-x-4">
@@ -130,10 +127,7 @@ const Achievements = () => {
                             {achievement.organization}
                           </p>
                           <div className="flex items-center gap-4 mt-2">
-                            <Badge 
-                              variant="outline" 
-                              className={`text-xs ${getCategoryColor(achievement.category)}`}
-                            >
+                            <Badge variant="outline" className={`text-xs ${getCategoryColor(achievement.category)}`}>
                               {achievement.category}
                             </Badge>
                             <div className="flex items-center text-xs text-muted-foreground">
@@ -150,8 +144,7 @@ const Achievements = () => {
                       {achievement.description}
                     </p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
 
@@ -163,8 +156,7 @@ const Achievements = () => {
             <Card className="shadow-card border-0">
               <CardContent className="p-6">
                 <div className="space-y-6">
-                  {skills.map((skill, index) => (
-                    <div key={index} className="space-y-2">
+                  {skills.map((skill, index) => <div key={index} className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-medium text-foreground">
                           {skill.name}
@@ -174,16 +166,12 @@ const Achievements = () => {
                         </span>
                       </div>
                       <div className="w-full bg-secondary rounded-full h-2">
-                        <div 
-                          className="bg-gradient-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ 
-                            width: `${skill.level}%`,
-                            animationDelay: `${index * 0.2}s`
-                          }}
-                        ></div>
+                        <div className="bg-gradient-primary h-2 rounded-full transition-all duration-1000 ease-out" style={{
+                      width: `${skill.level}%`,
+                      animationDelay: `${index * 0.2}s`
+                    }}></div>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -202,8 +190,6 @@ const Achievements = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Achievements;
