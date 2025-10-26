@@ -109,13 +109,7 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="py-6 border-t border-border/50">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center text-muted-foreground">
-              <span>© {currentYear} Gobinath.G. Made with</span>
-              <Heart className="h-4 w-4 mx-1 text-red-500 animate-pulse" />
-              <span>and lots of ☕</span>
-            </div>
-            
+          <div className="flex justify-center items-center">
             <div className="flex items-center space-x-4 text-sm text-muted-foreground">
               <span>Built with React + TypeScript</span>
               <span>•</span>
