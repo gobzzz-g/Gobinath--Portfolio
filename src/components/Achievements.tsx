@@ -167,7 +167,7 @@ const Achievements = () => {
                     <div key={index} className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-medium text-foreground">
-                          C++
+                          Python
                         </span>
                         <span className="text-sm text-muted-foreground">
                           {skill.level}%
