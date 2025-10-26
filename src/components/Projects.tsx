@@ -116,7 +116,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-glow transition-all duration-500 hover:-translate-y-3 border-0 shadow-primary bg-gradient-card animate-scale-in"
+              className="group hover:shadow-glow transition-all duration-500 hover:-translate-y-3 border-0 shadow-primary [background:var(--gradient-card)] animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
