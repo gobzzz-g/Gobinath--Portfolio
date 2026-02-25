@@ -6,23 +6,26 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -30,23 +33,43 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Replace with your EmailJS credentials
+      const serviceId = "service_mvza2ff";
+      const templateId = "template_wqq6576";
+      const publicKey = "9IHh7-vtid-F_F4Ok";
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "gobinath2702@gmail.com", // Your destination email
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
       toast({
-        title: "Message Sent Successfully!",
+        title: "Message Sent Successfully! ✅",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      
-      // Reset form
+
       setFormData({
         name: "",
         email: "",
         subject: "",
-        message: ""
+        message: "",
       });
-      
+    } catch (error) {
+      console.error("Email send failed:", error);
+      toast({
+        title: "Failed to send message ❌",
+        description: "Please try again later or contact me via email.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -54,45 +77,46 @@ const Contact = () => {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
       value: "gobinath2702@gmail.com",
-      href: "mailto:gobinath2702@gmail.com"
+      href: "mailto:gobinath2702@gmail.com",
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Phone",
-      value: "+91 XXXXX XXXXX",
-      href: "tel:+91XXXXXXXXX"
+      value: "+91 6374771399",
+      href: "tel:+916374771399",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "Tamil Nadu, India",
-      href: "#"
-    }
+      value: "Tamil Nadu, Coimbatore, India",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com/gobinath-g",
-      color: "hover:text-gray-900"
+      href: "https://github.com/gobzzz-g",
+      color: "hover:text-gray-900",
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/gobinath-g",
-      color: "hover:text-blue-600"
+      href: "https://www.linkedin.com/in/gobinath-g-75b56832a/",
+      color: "hover:text-blue-600",
     },
     {
       icon: <Twitter className="h-5 w-5" />,
       label: "Twitter",
-      href: "https://twitter.com/gobinath_g",
-      color: "hover:text-blue-400"
-    }
+      href: "https://x.com/GobinathG642467",
+      color: "hover:text-blue-400",
+    },
   ];
 
   return (
     <section id="contact" className="py-20 bg-background">
+      <div ref={ref} className={isVisible ? 'animate-on-scroll' : 'opacity-0'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -100,7 +124,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about technology and design
+            I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about technology and design.
           </p>
         </div>
 
@@ -119,7 +143,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <a 
+                      <a
                         href={item.href}
                         className="text-foreground hover:text-primary transition-colors font-medium"
                       >
@@ -158,9 +182,7 @@ const Contact = () => {
                 <blockquote className="text-muted-foreground italic">
                   "The best way to predict the future is to create it. Let's build something amazing together!"
                 </blockquote>
-                <footer className="mt-2 text-sm text-primary font-medium">
-                  - Gobinath.G
-                </footer>
+                <footer className="mt-2 text-sm text-primary font-medium">- Gobinath</footer>
               </CardContent>
             </Card>
           </div>
@@ -188,7 +210,6 @@ const Contact = () => {
                         onChange={handleInputChange}
                         placeholder="Your full name"
                         required
-                        className="transition-all duration-300 focus:ring-2 focus:ring-primary/20"
                       />
                     </div>
                     <div className="space-y-2">
@@ -201,7 +222,6 @@ const Contact = () => {
                         onChange={handleInputChange}
                         placeholder="your.email@example.com"
                         required
-                        className="transition-all duration-300 focus:ring-2 focus:ring-primary/20"
                       />
                     </div>
                   </div>
@@ -215,7 +235,6 @@ const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="What would you like to discuss?"
                       required
-                      className="transition-all duration-300 focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
 
@@ -226,17 +245,16 @@ const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Tell me more about your project, collaboration ideas, or just say hello!"
+                      placeholder="Tell me more about your project or just say hello!"
                       rows={6}
                       required
-                      className="transition-all duration-300 focus:ring-2 focus:ring-primary/20 resize-none"
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    variant="hero"
+                    size="lg"
                     disabled={isSubmitting}
                     className="w-full group"
                   >
@@ -257,6 +275,7 @@ const Contact = () => {
             </Card>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
