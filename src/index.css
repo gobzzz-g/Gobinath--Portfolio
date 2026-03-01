@@ -296,5 +296,15 @@
     will-change: auto;
     transform: translateZ(0);
   }
+
+  /* Hide scrollbar for mobile navigation */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 }
 /* Force HMR reload - 01/01/2026 03:30:47 */

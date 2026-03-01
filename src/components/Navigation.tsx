@@ -158,85 +158,90 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation - Full Width Top Bar */}
+      {/* Mobile Navigation - Compact with Hamburger Menu */}
       <nav className="fixed top-0 left-0 right-0 z-50 md:hidden">
         {/* Enhanced gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-background/10 to-background/20 pointer-events-none"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/12 via-accent/12 to-primary/12 pointer-events-none"></div>
         {/* Enhanced mirror effect overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/18 via-transparent to-accent/12 pointer-events-none"></div>
+        
         <div className="relative bg-background/50 backdrop-blur-2xl border-b border-primary/35 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+          {/* Inner glass reflection */}
+          <div className="absolute inset-[1px] bg-gradient-to-b from-primary/5 via-accent/5 to-transparent pointer-events-none"></div>
+          
           <div className="px-4 py-3">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <button
-              onClick={() => {
-                if (location.pathname !== "/") {
-                  navigate("/");
-                } else {
-                  scrollToSection(navItems[0]);
-                }
-              }}
-              className="text-xl font-bold text-foreground hover:text-primary transition-colors"
-            >
-              Gobinath.dev
-            </button>
-
-            {/* Mobile menu button */}
-            <div className="flex items-center gap-2">
-              <ThemeToggle />
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground"
+            <div className="flex justify-between items-center">
+              {/* Logo */}
+              <button
+                onClick={() => {
+                  if (location.pathname !== "/") {
+                    navigate("/");
+                  } else {
+                    scrollToSection(navItems[0]);
+                  }
+                }}
+                className="text-xl font-bold text-foreground hover:text-primary transition-colors"
               >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
-          </div>
+                Gobinath.dev
+              </button>
 
-          {/* Mobile Navigation Menu */}
-          {isOpen && (
-            <div className="mt-4 animate-fade-in">
-              <div className="relative">
-                {/* Enhanced gradient background for dropdown */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-background/20 via-background/10 to-background/20 pointer-events-none"></div>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/12 via-accent/12 to-primary/12 pointer-events-none"></div>
-                {/* Enhanced mirror shine effect for dropdown */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/18 via-transparent to-accent/12 pointer-events-none"></div>
-                <div className="relative px-2 py-3 space-y-1 bg-background/50 backdrop-blur-2xl rounded-2xl border border-primary/35 shadow-[0_8px_28px_rgba(0,0,0,0.35)]">
-                  {/* Inner glass reflection with theme gradient */}
-                  <div className="absolute inset-[1px] rounded-2xl bg-gradient-to-b from-primary/5 via-accent/5 to-transparent pointer-events-none"></div>
-                  
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item)}
-                    className={`relative z-10 block px-4 py-3 text-base font-medium w-full text-left transition-all duration-300 rounded-xl ${
-                      location.pathname === "/" && (
-                        (item.type === "section" && activeSection === item.id) ||
-                        (item.type === "both" && activeSection === item.id)
-                      )
-                        ? "text-primary bg-gradient-to-r from-primary/15 to-accent/15 shadow-sm"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-                    }`}
-                  >
-                    {item.label}
-                    {/* Active indicator for mobile */}
-                    {location.pathname === "/" && (
-                      (item.type === "section" && activeSection === item.id) ||
-                      (item.type === "both" && activeSection === item.id)
-                    ) && (
-                      <span className="absolute left-2 top-1/2 -translate-y-1/2 w-1 h-6 bg-gradient-to-b from-primary to-accent rounded-full"></span>
-                    )}
-                  </button>
-                ))}
-              </div>
+              {/* Theme Toggle and Hamburger Menu */}
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-foreground hover:bg-accent/50"
+                >
+                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </Button>
               </div>
             </div>
-          )}
-        </div>
+
+            {/* Mobile Navigation Dropdown Menu */}
+            {isOpen && (
+              <div className="mt-4 animate-fade-in">
+                <div className="relative">
+                  {/* Enhanced gradient background for dropdown */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-background/20 via-background/10 to-background/20 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/12 via-accent/12 to-primary/12 pointer-events-none"></div>
+                  {/* Enhanced mirror shine effect for dropdown */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/18 via-transparent to-accent/12 pointer-events-none"></div>
+                  
+                  <div className="relative px-2 py-3 space-y-1 bg-background/50 backdrop-blur-2xl rounded-2xl border border-primary/35 shadow-[0_8px_28px_rgba(0,0,0,0.35)]">
+                    {/* Inner glass reflection with theme gradient */}
+                    <div className="absolute inset-[1px] rounded-2xl bg-gradient-to-b from-primary/5 via-accent/5 to-transparent pointer-events-none"></div>
+                    
+                    {navItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item)}
+                        className={`relative z-10 block px-4 py-3 text-base font-medium w-full text-left transition-all duration-300 rounded-xl ${
+                          location.pathname === "/" && (
+                            (item.type === "section" && activeSection === item.id) ||
+                            (item.type === "both" && activeSection === item.id)
+                          )
+                            ? "text-primary bg-gradient-to-r from-primary/15 to-accent/15 shadow-sm"
+                            : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                        }`}
+                      >
+                        {item.label}
+                        {/* Active indicator for mobile */}
+                        {location.pathname === "/" && (
+                          (item.type === "section" && activeSection === item.id) ||
+                          (item.type === "both" && activeSection === item.id)
+                        ) && (
+                          <span className="absolute left-2 top-1/2 -translate-y-1/2 w-1 h-6 bg-gradient-to-b from-primary to-accent rounded-full"></span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </nav>
     </>
