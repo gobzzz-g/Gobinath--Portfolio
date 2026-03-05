@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Headphones, Code, Smartphone, Brain, Download } from "lucide-react";
+import { ExternalLink, Github, Headphones, Code, Smartphone, Brain, Download, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +14,7 @@ const Projects = () => {
       technologies: ["React", "TypeScript", "Vite", "Firebase", "GenAI"],
       icon: <Brain className="h-8 w-8" />,
       category: "Gen AI",
-      status: "In Development",
+      status: "Live",
       links: {
         github: "https://github.com/gobzzz-g/LoanKit-AI",
         demo: "https://loankit-ai-demo.web.app",
@@ -30,7 +30,7 @@ const Projects = () => {
       title: "AudioNest",
       description:
         "An innovative smart earbud project integrating obstacle detection using advanced sensors and premium voice outputs. Features real-time environmental awareness and seamless audio experience.",
-      technologies: ["IoT", "Sensors", "Audio Processing", "Embedded Systems", "Arduino"],
+      technologies: ["IoT", "Sensors", "Audio Processing", "Embedded Systems"],
       icon: <Headphones className="h-8 w-8" />,
       category: "Software and IoT",
       status: "Featured Project",
@@ -46,22 +46,22 @@ const Projects = () => {
       ],
     },
     {
-      title: "Streamlit Website",
+      title: "PolicySecure",
       description:
-        "A modern, responsive personal Streamlit website built with React and TypeScript. Features smooth animations, dark mode support, and optimized performance.",
-      technologies: ["Python", "Streamlit", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
-      icon: <Code className="h-8 w-8" />,
-      category: "Web Development",
-      status: "Live",
+        "A full-stack web application that streamlines the end-to-end insurance claims lifecycle using AI-powered fraud detection and automated settlement recommendations, powered by Google Gemini AI.",
+      technologies: ["React", "FastAPI", "Google Gemini AI", "Tailwind CSS"],
+      icon: <ShieldCheck className="h-8 w-8" />,
+      category: "Full Stack & AI",
+      status: "In Development",
       links: {
-        github: "https://github.com/gobzzz-g/Streamlit-Living_Simulator_for_Mars",
-        demo: "https://streamlit-portfolio.vercel.app/",
+        github: "https://github.com/gobzzz-g/PolicySecure",
+        demo: "https://policysecure-demo.vercel.app/",
       },
       highlights: [
-        "Responsive design",
-        "Smooth animations",
-        "Modern UI/UX",
-        "Performance optimized",
+        "AI-powered fraud detection",
+        "6 insurance types support",
+        "Automated settlements",
+        "5 user roles with RBAC",
       ],
     },
     {
