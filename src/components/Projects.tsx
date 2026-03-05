@@ -49,19 +49,19 @@ const Projects = () => {
       title: "PolicySecure",
       description:
         "A full-stack web application that streamlines the end-to-end insurance claims lifecycle using AI-powered fraud detection and automated settlement recommendations, powered by Google Gemini AI.",
-      technologies: ["React", "FastAPI", "Google Gemini AI", "Tailwind CSS"],
+      technologies: ["React", "Python", "Google Gemini AI", "Tailwind CSS"],
       icon: <ShieldCheck className="h-8 w-8" />,
       category: "Full Stack & AI",
       status: "In Development",
       links: {
-        github: "https://github.com/gobzzz-g/PolicySecure",
-        demo: "https://policysecure-demo.vercel.app/",
+        github: "https://github.com/gobzzz-g/Policy-Secure",
+        demo: "https://policy-bae98.web.app/",
       },
       highlights: [
         "AI-powered fraud detection",
         "6 insurance types support",
         "Automated settlements",
-        "5 user roles with RBAC",
+        "3 user roles with RBAC",
       ],
     },
     {
