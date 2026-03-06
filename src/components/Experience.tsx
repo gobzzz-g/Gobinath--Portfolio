@@ -42,22 +42,6 @@ const Experience = () => {
         "Gained hands-on experience in real-world UI/UX workflows and design thinking."
       ]
     },
-    {
-      title: "Python Developer Intern",
-      company: "Alfido Tech · Internship",
-      duration: "Jul 2025 – Aug 2025",
-      location: "Remote",
-      image: "/alfido-tech-logo.png",
-      certificateImage: "/alfido-tech-internship-certificate.png",
-      description: "Focused on Python programming fundamentals and problem-solving using Data Structures and Algorithms.",
-      technologies: ["Python", "DSA"],
-      achievements: [
-        "Practiced Python programming concepts through hands-on tasks and exercises",
-        "Improved problem-solving approach and coding discipline.",
-        "Solved logical and algorithmic problems using basic data structures",
-        "Completed internship requirements successfully and earned certification."
-      ]
-    },
   ];
 
   return (

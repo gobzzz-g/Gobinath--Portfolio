@@ -20,10 +20,10 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-12 h-12 bg-gradient-success rounded-full opacity-35 animate-float" style={{ animationDelay: '0.5s' }}></div>
       </div>
       
-      <div className="max-w-7xl mx-auto pl-1 pr-4 sm:pl-1 sm:pr-6 lg:pl-2 lg:pr-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-12rem)]">
           {/* Content */}
-          <div className="text-center lg:text-left animate-fade-in mt-6 lg:mt-8">
+          <div className="text-center lg:text-left animate-fade-in mt-6 lg:mt-8 flex flex-col items-center lg:items-start">
             {/* Enhanced intro section with decorative elements */}
             <div className="relative inline-block mb-4">
               <span className="text-lg font-medium text-muted-foreground tracking-widest uppercase animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -94,12 +94,12 @@ const Hero = () => {
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 w-full max-w-md lg:max-w-none">
               <Button 
                 variant="hero" 
                 size="lg"
                 onClick={() => scrollToSection("projects")}
-                className="group"
+                className="group w-full sm:w-auto"
               >
                 View My Works
                 <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
@@ -109,6 +109,7 @@ const Hero = () => {
                 href="https://drive.google.com/file/d/1B0Br2yoW7JPVYIhbj1QBgKdd6XXCnp-k/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
                 <Button
                   variant="outline" 
