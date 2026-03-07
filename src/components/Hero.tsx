@@ -160,7 +160,7 @@ const Hero = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-scale-in">
+          <div className="flex flex-col items-center justify-center animate-scale-in gap-16">
             <div className="relative group">
               {/* Outer glow effects */}
               <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-30 animate-glow"></div>
@@ -237,22 +237,22 @@ const Hero = () => {
               <div className="absolute top-1/2 -right-8 w-4 h-4 bg-gradient-primary rounded-full animate-bounce shadow-md"></div>
               <div className="absolute top-1/2 -left-8 w-4 h-4 bg-gradient-accent rounded-full animate-bounce shadow-md" style={{ animationDelay: '0.5s' }}></div>
             </div>
+            
+            {/* Scroll indicator with enhanced animation */}
+            <div className="animate-[bounce_2s_ease-in-out_infinite]">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => scrollToSection("about")}
+                className="rounded-full hover:bg-primary/10 transition-all duration-300 group relative"
+              >
+                <ArrowDown className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                {/* Subtle pulse ring effect */}
+                <span className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 animate-ping"></span>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator with enhanced animation */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-[bounce_2s_ease-in-out_infinite]">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => scrollToSection("about")}
-          className="rounded-full hover:bg-primary/10 transition-all duration-300 group relative"
-        >
-          <ArrowDown className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
-          {/* Subtle pulse ring effect */}
-          <span className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 animate-ping"></span>
-        </Button>
       </div>
     </section>
   );
